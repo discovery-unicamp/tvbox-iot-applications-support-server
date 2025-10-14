@@ -1,0 +1,12 @@
+[Unit]
+Description=Totem Update Server
+After=network.target
+
+[Service]
+ExecStart=/root/servers/totemUpdateServer
+WorkingDirectory=/root/servers
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target

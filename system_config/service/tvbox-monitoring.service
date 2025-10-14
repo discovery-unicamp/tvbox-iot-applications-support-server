@@ -1,0 +1,13 @@
+[Unit]
+Description=TVBox Monitoring
+After=network.target
+
+[Service]
+ExecStart=/root/servers/tvboxMonitoring
+WorkingDirectory=/root/servers/
+Restart=always
+User=root
+Environment="DEVICE_NAME=tvbox-01"
+
+[Install]
+WantedBy=multi-user.target

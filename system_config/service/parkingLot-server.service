@@ -1,0 +1,12 @@
+[Unit]
+Description=Parking Lot Server
+After=network.target
+
+[Service]
+ExecStart=/root/servers/parkingLotServer
+WorkingDirectory=/root/servers
+Restart=always
+User=root
+
+[Install]
+WantedBy=multi-user.target
