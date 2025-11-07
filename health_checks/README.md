@@ -3,12 +3,6 @@
 This project uses Python virtual environments and several system
 dependencies to run Telegram bots on different schedules.
 
-## ✅ Requirements
-
--   Python 3.11
--   Bash shell
--   `sudo` permissions
-
 ------------------------------------------------------------------------
 
 ## 🚀 Installation
