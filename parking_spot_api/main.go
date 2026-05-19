@@ -159,7 +159,11 @@ func lastValue(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	w.Write([]byte(strconv.Itoa(16 - bits.OnesCount(uint(encoded)))))
+	decimal := uint(encoded)        // interpreta como inteiro sem sinal
+	mask := uint(0b111111110001111) // ignora as vagas 8, 9, e 10 (vagas especiais)
+	vagasTotais := 15 - 3           // 15 disponíveis, 3 especiais
+
+	w.Write([]byte(strconv.Itoa(vagasTotais - bits.OnesCount(decimal&mask))))
 }
 
 func lastTimestamp(w http.ResponseWriter, r *http.Request) {
